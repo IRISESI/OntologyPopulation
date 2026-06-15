@@ -1,0 +1,230 @@
+@prefix ex: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <https://www.ica.org/standards/RiC/ontology/1.1>
+ ] .
+
+
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYearMonth
+xsd:gYearMonth rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/ADayDownAGoldmine
+ex:ADayDownAGoldmine rdf:type owl:NamedIndividual ,
+                              rico:RecordResource ;
+                     rdfs:label "A Day Down a Goldmine" .
+
+
+###  http://example.org/ArtAsEssentialForce
+ex:ArtAsEssentialForce rdf:type owl:NamedIndividual ,
+                                rico:Thing ;
+                       rdfs:label "Art is an essential force in society" .
+
+
+###  http://example.org/ArtChangesIdeas
+ex:ArtChangesIdeas rdf:type owl:NamedIndividual ,
+                            rico:Thing ;
+                   rdfs:label "Art can change ideas" .
+
+
+###  http://example.org/ArtistOccupation
+ex:ArtistOccupation rdf:type owl:NamedIndividual ,
+                             rico:OccupationType ;
+                    rdfs:label "Artist" .
+
+
+###  http://example.org/AwardDate1990
+ex:AwardDate1990 rdf:type owl:NamedIndividual ,
+                          rico:Date ;
+                 rico:normalizedDateValue "1990-04"^^xsd:gYearMonth .
+
+
+###  http://example.org/AwardDate2005
+ex:AwardDate2005 rdf:type owl:NamedIndividual ,
+                          rico:Date ;
+                 rico:normalizedDateValue "2005"^^xsd:gYear .
+
+
+###  http://example.org/BirthDate1921
+ex:BirthDate1921 rdf:type owl:NamedIndividual ,
+                          rico:Date ;
+                 rico:normalizedDateValue "1921"^^xsd:gYear .
+
+
+###  http://example.org/CollinsGalleryExhibition1976
+ex:CollinsGalleryExhibition1976 rdf:type owl:NamedIndividual ,
+                                         rico:Event ;
+                                rdfs:label "George Wyllie's first solo exhibition at the Collins Gallery" ;
+                                rico:hasDate ex:ExhibitionDate1976 ;
+                                rico:isAssociatedWithCorporateBody ex:UniversityOfStrathclyde .
+
+
+###  http://example.org/CustomsOfficerOccupation
+ex:CustomsOfficerOccupation rdf:type owl:NamedIndividual ,
+                                     rico:OccupationType ;
+                            rdfs:label "Customs officer" .
+
+
+###  http://example.org/DeathDate2012
+ex:DeathDate2012 rdf:type owl:NamedIndividual ,
+                          rico:Date ;
+                 rico:normalizedDateValue "2012"^^xsd:gYear .
+
+
+###  http://example.org/EquilibriumOfSpires
+ex:EquilibriumOfSpires rdf:type owl:NamedIndividual ,
+                                rico:RecordResource ;
+                       rdfs:label "Equilibrium of Spires" .
+
+
+###  http://example.org/Europe
+ex:Europe rdf:type owl:NamedIndividual ,
+                   rico:Place ;
+          rdfs:label "Europe" .
+
+
+###  http://example.org/ExhibitionDate1976
+ex:ExhibitionDate1976 rdf:type owl:NamedIndividual ,
+                               rico:Date ;
+                      rico:normalizedDateValue "1976"^^xsd:gYear .
+
+
+###  http://example.org/GeorgeWyllie
+ex:GeorgeWyllie rdf:type owl:NamedIndividual ,
+                         rico:Person ;
+                rdfs:label "George Wyllie" ;
+                rico:hasBirthDate ex:BirthDate1921 ;
+                rico:hasDeathDate ex:DeathDate2012 ;
+                rico:hasOrHadOccupationOfType ex:ArtistOccupation ,
+                                              ex:CustomsOfficerOccupation ,
+                                              ex:SailorOccupation ,
+                                              ex:SculptorOccupation ;
+                rico:hasOrHadResidence ex:Gourock ;
+                rico:hasOrHadSubject ex:ArtAsEssentialForce ,
+                                     ex:ArtChangesIdeas ,
+                                     ex:Questioning ;
+                rico:isAssociatedWithCorporateBody ex:UniversityOfStrathclyde ;
+                rico:isAssociatedWithPlace ex:Europe ,
+                                           ex:Glasgow ,
+                                           ex:India ,
+                                           ex:UnitedKingdom ,
+                                           ex:UnitedStates ;
+                rico:isOrWasCreatorOf ex:ADayDownAGoldmine ,
+                                      ex:EquilibriumOfSpires ,
+                                      ex:TheCosmicVoyage ,
+                                      ex:ThePaperBoat ,
+                                      ex:TheStrawLocomotive ;
+                rico:participatedIn ex:CollinsGalleryExhibition1976 ,
+                                    ex:HonoraryDegreeAward1990 ,
+                                    ex:MBEAward2005 .
+
+
+###  http://example.org/Glasgow
+ex:Glasgow rdf:type owl:NamedIndividual ,
+                    rico:Place ;
+           rdfs:label "Glasgow" .
+
+
+###  http://example.org/Gourock
+ex:Gourock rdf:type owl:NamedIndividual ,
+                    rico:Place ;
+           rdfs:label "Gourock, Scotland" .
+
+
+###  http://example.org/HonoraryDegreeAward1990
+ex:HonoraryDegreeAward1990 rdf:type owl:NamedIndividual ,
+                                    rico:Event ;
+                           rdfs:label "Award of honorary Doctor of Letters degree" ;
+                           rico:hasDate ex:AwardDate1990 ;
+                           rico:isAssociatedWithCorporateBody ex:UniversityOfStrathclyde .
+
+
+###  http://example.org/India
+ex:India rdf:type owl:NamedIndividual ,
+                  rico:Place ;
+         rdfs:label "India" .
+
+
+###  http://example.org/MBEAward2005
+ex:MBEAward2005 rdf:type owl:NamedIndividual ,
+                         rico:Event ;
+                rdfs:label "Award of MBE for service to the Arts" ;
+                rico:hasDate ex:AwardDate2005 .
+
+
+###  http://example.org/Questioning
+ex:Questioning rdf:type owl:NamedIndividual ,
+                        rico:Thing ;
+               rdfs:label "Questioning as a core artistic principle" .
+
+
+###  http://example.org/SailorOccupation
+ex:SailorOccupation rdf:type owl:NamedIndividual ,
+                             rico:OccupationType ;
+                    rdfs:label "Sailor" .
+
+
+###  http://example.org/SculptorOccupation
+ex:SculptorOccupation rdf:type owl:NamedIndividual ,
+                               rico:OccupationType ;
+                      rdfs:label "Sculptor" .
+
+
+###  http://example.org/TheCosmicVoyage
+ex:TheCosmicVoyage rdf:type owl:NamedIndividual ,
+                            rico:RecordResource ;
+                   rdfs:label "The Cosmic Voyage" .
+
+
+###  http://example.org/ThePaperBoat
+ex:ThePaperBoat rdf:type owl:NamedIndividual ,
+                         rico:RecordResource ;
+                rdfs:label "The Paper Boat" .
+
+
+###  http://example.org/TheStrawLocomotive
+ex:TheStrawLocomotive rdf:type owl:NamedIndividual ,
+                               rico:RecordResource ;
+                      rdfs:label "The Straw Locomotive" .
+
+
+###  http://example.org/UnitedKingdom
+ex:UnitedKingdom rdf:type owl:NamedIndividual ,
+                          rico:Place ;
+                 rdfs:label "United Kingdom" .
+
+
+###  http://example.org/UnitedStates
+ex:UnitedStates rdf:type owl:NamedIndividual ,
+                         rico:Place ;
+                rdfs:label "United States" .
+
+
+###  http://example.org/UniversityOfStrathclyde
+ex:UniversityOfStrathclyde rdf:type owl:NamedIndividual ,
+                                    rico:CorporateBody ;
+                           rdfs:label "University of Strathclyde" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
