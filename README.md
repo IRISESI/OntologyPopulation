@@ -5,6 +5,7 @@ Date of this example set: 2026, June 15th
 Language(s) used: English
 
 These example files are under Apache License 2.
+ http://www.apache.org/licenses/LICENSE-2.0
 
 For any question, please contact: Bouchra EL IRISSI (bel-idrissi@esi.ac.ma) 
 The repository contains :
