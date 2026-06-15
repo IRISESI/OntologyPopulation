@@ -1,0 +1,173 @@
+@prefix ex: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <https://www.ica.org/standards/RiC/ontology/1.1>
+ ] .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYearMonth
+xsd:gYearMonth rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/ADayDownAGoldmine
+ex:ADayDownAGoldmine rdf:type owl:NamedIndividual ,
+                              rico:RecordResource ;
+                     rico:name "A Day Down a Goldmine" .
+
+
+###  http://example.org/CollinsGallery
+ex:CollinsGallery rdf:type owl:NamedIndividual ,
+                           rico:Place ;
+                  rico:name "Collins Gallery" .
+
+
+###  http://example.org/EquilibriumOfSpires
+ex:EquilibriumOfSpires rdf:type owl:NamedIndividual ,
+                                rico:RecordResource ;
+                       rico:name "Equilibrium of Spires" .
+
+
+###  http://example.org/Europe
+ex:Europe rdf:type owl:NamedIndividual ,
+                   rico:Place ;
+          rico:name "Europe" .
+
+
+###  http://example.org/ExhibitionsAbroad
+ex:ExhibitionsAbroad rdf:type owl:NamedIndividual ,
+                              rico:Event ;
+                     rico:name "Exhibitions in the United Kingdom, Europe, India and the United States" .
+
+
+###  http://example.org/GeorgeWyllie
+ex:GeorgeWyllie rdf:type owl:NamedIndividual ,
+                         rico:Person ;
+                rico:generalDescription "He called his art Sculpture." ,
+                                        "The underlying principle of his work was that art can change ideas and is an essential force in society." ,
+                                        "There was always a question at the heart of his work." ;
+                rico:hasBirthDate "1921"^^xsd:gYear ;
+                rico:hasBirthPlace ex:Glasgow ;
+                rico:hasDeathDate "2012"^^xsd:gYear ;
+                rico:hasOrHadOccupationOfType "artist" ,
+                                              "customs officer" ,
+                                              "sailor" ,
+                                              "sculptor" ;
+                rico:hasOrHadResidence ex:Gourock ;
+                rico:history "George Wyllie acquired a national and international reputation as an artist and sculptor." ,
+                             "George Wyllie worked in regenerative art, performance art, public art, theatre, writing, installations and film." ;
+                rico:isAssociatedWithCorporateBody ex:UniversityOfStrathclyde ;
+                rico:isAssociatedWithEvent ex:ExhibitionsAbroad ,
+                                           ex:HonoraryDoctorate1990 ,
+                                           ex:MBEAward2005 ;
+                rico:isAssociatedWithPlace ex:Europe ,
+                                           ex:Glasgow ,
+                                           ex:Gourock ,
+                                           ex:India ,
+                                           ex:UnitedKingdom ,
+                                           ex:UnitedStates ;
+                rico:isAssociatedWithRecordResource ex:SoloExhibition1976 ;
+                rico:isCreatorOf ex:ADayDownAGoldmine ,
+                                 ex:EquilibriumOfSpires ,
+                                 ex:TheCosmicVoyage ,
+                                 ex:ThePaperBoat ,
+                                 ex:TheStrawLocomotive ;
+                rico:name "George Wyllie" .
+
+
+###  http://example.org/Glasgow
+ex:Glasgow rdf:type owl:NamedIndividual ,
+                    rico:Place ;
+           rico:name "Glasgow" .
+
+
+###  http://example.org/Gourock
+ex:Gourock rdf:type owl:NamedIndividual ,
+                    rico:Place ;
+           rico:name "Gourock" .
+
+
+###  http://example.org/HonoraryDoctorate1990
+ex:HonoraryDoctorate1990 rdf:type owl:NamedIndividual ,
+                                  rico:Event ;
+                         rico:date "1990-04"^^xsd:gYearMonth ;
+                         rico:isAssociatedWithCorporateBody ex:UniversityOfStrathclyde ;
+                         rico:name "Award of honorary Doctor of Letters" .
+
+
+###  http://example.org/India
+ex:India rdf:type owl:NamedIndividual ,
+                  rico:Place ;
+         rico:name "India" .
+
+
+###  http://example.org/MBEAward2005
+ex:MBEAward2005 rdf:type owl:NamedIndividual ,
+                         rico:Event ;
+                rico:date "2005"^^xsd:gYear ;
+                rico:name "Awarded MBE for service to the Arts" .
+
+
+###  http://example.org/SoloExhibition1976
+ex:SoloExhibition1976 rdf:type owl:NamedIndividual ,
+                               rico:Event ;
+                      rico:date "1976"^^xsd:gYear ;
+                      rico:hasOrHadLocation ex:CollinsGallery ;
+                      rico:name "George Wyllie's first solo exhibition" .
+
+
+###  http://example.org/TheCosmicVoyage
+ex:TheCosmicVoyage rdf:type owl:NamedIndividual ,
+                            rico:RecordResource ;
+                   rico:name "The Cosmic Voyage" .
+
+
+###  http://example.org/ThePaperBoat
+ex:ThePaperBoat rdf:type owl:NamedIndividual ,
+                         rico:RecordResource ;
+                rico:name "The Paper Boat" .
+
+
+###  http://example.org/TheStrawLocomotive
+ex:TheStrawLocomotive rdf:type owl:NamedIndividual ,
+                               rico:RecordResource ;
+                      rico:name "The Straw Locomotive" .
+
+
+###  http://example.org/UnitedKingdom
+ex:UnitedKingdom rdf:type owl:NamedIndividual ,
+                          rico:Place ;
+                 rico:name "United Kingdom" .
+
+
+###  http://example.org/UnitedStates
+ex:UnitedStates rdf:type owl:NamedIndividual ,
+                         rico:Place ;
+                rico:name "United States" .
+
+
+###  http://example.org/UniversityOfStrathclyde
+ex:UniversityOfStrathclyde rdf:type owl:NamedIndividual ,
+                                    rico:CorporateBody ;
+                           rico:name "University of Strathclyde" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
